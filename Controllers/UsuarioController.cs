@@ -16,17 +16,37 @@ namespace PruebaTecnica.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login(Login model)
         {
-            var usuario = await db.ValidateLogin(model.Email, model.Contrasena);
+            var usuario = await db.ValidateLogin(model.Email, model.Password);
 
             if (usuario == null)
             {
                 return Unauthorized(new { message = "Credenciales incorrectas" });
             }
 
-            // Aquí puedes generar un token JWT y devolverlo en la respuesta
-            // Puedes utilizar librerías como System.IdentityModel.Tokens.Jwt
-
             return Ok(new { message = "Inicio de sesión exitoso" });
+        }
+
+        [HttpPost("register")]
+        public async Task<IActionResult> Registro(Registro model)
+        {
+            var usuarioExistente = await db
+                .GetUsuarioByEmail(model.Email);
+
+            if (usuarioExistente != null)
+            {
+                return BadRequest(new { message = "El usuario ya existe" });
+            }
+
+            var nuevoUsuario = new Usuario
+            {
+                Name = model.Name,
+                Email = model.Email,
+                Password = model.Password
+            };
+
+            await db.InsertUsuario(nuevoUsuario);
+
+            return Ok(new { message = "Registro exitoso" });
         }
 
         [Route("getAllUsuarios")]

@@ -34,6 +34,11 @@ namespace PruebaTecnica.Repositories
         {
             return await Collection.FindAsync(u => u.Email == email && u.Password == password).Result.FirstAsync();
         }
+
+        public async Task<Usuario> GetUsuarioByEmail(string email)
+        {
+            return await Collection.FindAsync(u => u.Email == email).Result.FirstAsync();
+        }
         public async Task InsertUsuario(Usuario usuario)
         {
             await Collection.InsertOneAsync(usuario);

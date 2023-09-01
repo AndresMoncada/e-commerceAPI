@@ -11,5 +11,6 @@ namespace PruebaTecnica.Repositories
         Task<List<Usuario>> GetAllUsuarios();
         Task<Usuario> GetUsuarioById(string id);
         Task<Usuario> ValidateLogin(string email, string password);
+        Task<Usuario> GetUsuarioByEmail(string email);
     }
 }

@@ -9,6 +9,6 @@ namespace PruebaTecnica.Models
         public string Email { get; set; }
 
         [Required(ErrorMessage = "El campo Contraseña es obligatorio")]
-        public string Contrasena { get; set; }
+        public string Password { get; set; }
     }
 }
