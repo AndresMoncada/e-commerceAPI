@@ -1,0 +1,91 @@
+  {
+    "name": "Categorias",
+    "requests": [
+      {
+        "name": "Crear Categoría",
+        "request": {
+          "method": "POST",
+          "url": "{{base_url}}/api/Categoria/createCategory",
+          "header": [],
+          "body": {
+            "mode": "raw",
+            "raw": {
+              "nombre": "Electrónica",
+              "descripcion": "Productos electrónicos"
+            },
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "description": "Crea una nueva categoría"
+        }
+      }
+    ]
+  }
+
+
+
+{
+  "name": "Categorias",
+  "requests": [
+    {
+      "name": "Crear categoría 2",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/api/Categoria/createCategory",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": {
+            "nombre": "Ropa",
+            "descripcion": "Ropa y accesorios"
+          },
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "description": "Crea nueva categoría"
+      }
+    }
+  ]
+}
+
+
+{
+  "name": "Categorias",
+  "requests": [
+    {
+      "name": "Obtener Todas las Categorías",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/api/Categoria/getAllCategory",
+        "description": "Obtiene la lista de todas las categorías"
+      }
+    }
+  ]
+}
+
+
+
+{
+  "name": "Categorias",
+  "requests": [
+    {
+      "name": "Obtener Categoría por ID",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/api/Categoria/getCategoryById/{id}",
+        "description": "Obtiene una categoría específica por su ID"
+      }
+    }
+  ]
+}
+
+
+
+
+

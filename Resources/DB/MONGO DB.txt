@@ -1,0 +1,81 @@
+db.createCollection("productos", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["nombre", "descripcion", "precio", "cantidad"],
+      properties: {
+        nombre: { bsonType: "string" },
+        descripcion: { bsonType: "string" },
+        precio: { bsonType: "number" },
+        cantidad: { bsonType: "int" },
+        categoria_id: { bsonType: "objectId" } 
+      }
+    }
+  }
+})
+
+
+
+db.createCollection("categorias", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["nombre"],
+      properties: {
+        nombre: { bsonType: "string" },
+        descripcion: { bsonType: "string" }
+      }
+    }
+  }
+})
+
+
+db.createCollection("tiendas", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["nombre", "direccion", "telefono", "email"],
+      properties: {
+        nombre: { bsonType: "string" },
+        direccion: { bsonType: "string" },
+	telefono: { bsonType: "string" },
+	email: { bsonType: "string" },
+        }
+      }
+    }
+  }
+})
+
+
+db.createCollection("usuarios", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["nombre", "email", "contrasena"],
+      properties: {
+        nombre: { bsonType: "string" },
+        email: { bsonType: "string" },
+        contrasena: { bsonType: "string" },
+      }
+    }
+  }
+})
+
+
+db.createCollection("registros_de_ventas", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["producto_id", "cantidad", "precio", "fecha", "tienda_id"],
+      properties: {
+        producto_id: { bsonType: "objectId" }, 
+        cantidad: { bsonType: "int" },
+        precio: { bsonType: "number" },
+        fecha: { bsonType: "date" },
+        tienda_id: { bsonType: "objectId" },
+	usuario_id: { bsonType: "objectId" }
+      }
+    }
+  }
+})
+

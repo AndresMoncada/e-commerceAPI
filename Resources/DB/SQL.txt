@@ -1,0 +1,44 @@
+CREATE TABLE Productos (
+    Id INT PRIMARY KEY,
+    Nombre VARCHAR(255),
+    Descripcion TEXT,
+    Precio DECIMAL(10, 2),
+    Cantidad INT,
+    CategoriaId INT,
+    FOREIGN KEY (CategoriaId) REFERENCES Categorias(Id)
+);
+
+CREATE TABLE Categorias (
+    Id INT PRIMARY KEY,
+    Nombre VARCHAR(255),
+    Descripcion TEXT
+);
+
+
+CREATE TABLE Tiendas (
+    Id INT PRIMARY KEY,
+    Nombre VARCHAR(255),
+    Direccion VARCHAR(255),
+    Telefono VARCHAR(20),
+    Email VARCHAR(255)
+);
+
+CREATE TABLE Usuarios (
+    Id INT PRIMARY KEY,
+    Nombre VARCHAR(255),
+    Email VARCHAR(255),
+    Contrasena VARCHAR(255),
+);
+
+CREATE TABLE RegistrosDeVentas (
+    Id INT PRIMARY KEY,
+    ProductoId INT,
+    Cantidad INT,
+    Precio DECIMAL(10, 2),
+    Fecha DATETIME,
+    TiendaId INT,
+    UsuarioId INT,
+    FOREIGN KEY (ProductoId) REFERENCES Productos(Id),
+    FOREIGN KEY (TiendaId) REFERENCES Tiendas(Id),
+    FOREIGN KEY (UsuarioId) REFERENCES Usuarios(Id)
+);

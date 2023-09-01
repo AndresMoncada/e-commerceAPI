@@ -1,0 +1,91 @@
+{
+    "name": "Productos",
+    "requests": [
+      {
+        "name": "Crear Producto",
+        "request": {
+          "method": "POST",
+          "url": "{{base_url}}/api/Producto/createProduct",
+          "header": [],
+          "body": {
+            "mode": "raw",
+            "raw": {
+              "nombre": "Producto 1",
+              "descripcion": "Descripción del producto 1",
+              "precio": 20.5,
+              "cantidad": 100,
+              "categoria_id": "{{categoria_id}}"
+            },
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "description": "Crea un nuevo producto"
+        }
+      }
+    ]
+  }
+
+{
+  "name": "Productos",
+  "requests": [
+    {
+      "name": "Crear producto2",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/api/Producto/createProduct",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": {
+            "nombre": "Producto 2",
+            "descripcion": "Descripción del producto 2",
+            "precio": 30.99,
+            "cantidad": 75,
+            "categoria_id": "{{categoria_id}}"
+          },
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "description": "Crea nuevo producto"
+      }
+    }
+  ]
+}
+
+
+{
+  "name": "Productos",
+  "requests": [
+    {
+      "name": "Obtener Todos los Productos",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/api/Producto/getAllProduct",
+        "description": "Obtiene la lista de todos los productos"
+      }
+    }
+  ]
+}
+
+
+{
+  "name": "Productos",
+  "requests": [
+    {
+      "name": "Obtener Producto por ID",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/api/Producto/getProductById/{id}",
+        "description": "Obtiene un producto específico por su ID"
+      }
+    }
+  ]
+}
+
+

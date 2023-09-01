@@ -1,0 +1,29 @@
+
+  {
+    "name": "Usuarios",
+    "requests": [
+      {
+        "name": "Crear Usuario",
+        "request": {
+          "method": "POST",
+          "url": "{{base_url}}/api/Usuario",
+          "header": [],
+          "body": {
+            "mode": "raw",
+            "raw": {
+              "nombre": "Usuario Prueba",
+              "email": "usuario@prueba.com",
+              "contrasena": "123456"
+            },
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "description": "Crea un nuevo usuario"
+        }
+      }
+    ]
+  }
+
